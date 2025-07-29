@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Forum - DEMO</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="forum-header">
+            <h1><i class="fas fa-comments"></i> Mini Forum</h1>
+            <p class="subtitle">Un semplice forum per condividere idee e discussioni</p>
+            <div class="demo-notice">
+                <i class="fas fa-info-circle"></i>
+                <strong>DEMO VERSION</strong> - Questa è una versione dimostrativa con dati statici
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <i class="fas fa-file-alt"></i>
+                <span class="stat-number">3</span>
+                <span class="stat-label">Post Totali</span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-reply"></i>
+                <span class="stat-number">5</span>
+                <span class="stat-label">Risposte Totali</span>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <span class="stat-number">Oggi</span>
+                <span class="stat-label">Ultimo Post</span>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2><i class="fas fa-plus-circle"></i> Crea un nuovo post</h2>
+            <form class="post-form" id="demo-form">
+                <div class="form-group">
+                    <input type="text" name="author" required maxlength="50" placeholder="Il tuo nome" value="">
+                </div>
+                <div class="form-group">
+                    <textarea name="content" required maxlength="500" placeholder="Scrivi il tuo messaggio..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Pubblica Post
+                </button>
+            </form>
+        </div>
+
+        <div class="posts-container">
+            <h2><i class="fas fa-list"></i> Discussioni Recenti</h2>
+            
+            <!-- Post 1 -->
+            <div class="post-item">
+                <div class="post-header">
+                    <div class="post-author">
+                        <i class="fas fa-user-circle"></i>
+                        <strong>Marco Rossi</strong>
+                    </div>
+                    <div class="post-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        2024-12-24 10:30
+                    </div>
+                </div>
+                <div class="post-content">
+                    Benvenuti nel nostro mini forum! Questo è un esempio di post per mostrare le funzionalità del sistema. Potete creare nuovi post e rispondere a quelli esistenti.
+                </div>
+                <div class="post-actions">
+                    <button class="btn btn-secondary btn-sm reply-btn" onclick="toggleReplyForm(1)">
+                        <i class="fas fa-reply"></i> Rispondi
+                    </button>
+                    <span class="replies-count">
+                        <i class="fas fa-comments"></i> 2 risposte
+                    </span>
+                </div>
+                
+                <!-- Risposte al Post 1 -->
+                <div class="replies-container">
+                    <div class="reply-item">
+                        <div class="reply-header">
+                            <div class="reply-author">
+                                <i class="fas fa-user"></i>
+                                <strong>Laura Bianchi</strong>
+                            </div>
+                            <div class="reply-date">
+                                <i class="fas fa-clock"></i>
+                                2024-12-24 11:15
+                            </div>
+                        </div>
+                        <div class="reply-content">
+                            Grazie per aver creato questo forum! È molto utile per condividere idee e opinioni.
+                        </div>
+                    </div>
+                    
+                    <div class="reply-item">
+                        <div class="reply-header">
+                            <div class="reply-author">
+                                <i class="fas fa-user"></i>
+                                <strong>Giuseppe Verdi</strong>
+                            </div>
+                            <div class="reply-date">
+                                <i class="fas fa-clock"></i>
+                                2024-12-24 12:00
+                            </div>
+                        </div>
+                        <div class="reply-content">
+                            Sono d'accordo! L'interfaccia è molto pulita e facile da usare.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form risposta -->
+                <div class="reply-form" id="reply-form-1" style="display: none;">
+                    <h4><i class="fas fa-reply"></i> Rispondi a questo post:</h4>
+                    <form class="reply-form-content">
+                        <div class="form-group">
+                            <input type="text" name="author" required maxlength="50" placeholder="Il tuo nome">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="content" required maxlength="500" placeholder="Scrivi la tua risposta..."></textarea>
+                        </div>
+                        <div class="reply-actions">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fas fa-paper-plane"></i> Invia Risposta
+                            </button>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleReplyForm(1)">
+                                <i class="fas fa-times"></i> Annulla
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post-item">
+                <div class="post-header">
+                    <div class="post-author">
+                        <i class="fas fa-user-circle"></i>
+                        <strong>Anna Neri</strong>
+                    </div>
+                    <div class="post-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        2024-12-24 14:20
+                    </div>
+                </div>
+                <div class="post-content">
+                    Che ne pensate delle nuove tecnologie web? Io sto imparando React e mi sembra molto interessante!
+                </div>
+                <div class="post-actions">
+                    <button class="btn btn-secondary btn-sm reply-btn" onclick="toggleReplyForm(2)">
+                        <i class="fas fa-reply"></i> Rispondi
+                    </button>
+                    <span class="replies-count">
+                        <i class="fas fa-comments"></i> 1 risposta
+                    </span>
+                </div>
+                
+                <!-- Risposte al Post 2 -->
+                <div class="replies-container">
+                    <div class="reply-item">
+                        <div class="reply-header">
+                            <div class="reply-author">
+                                <i class="fas fa-user"></i>
+                                <strong>Luca Ferrari</strong>
+                            </div>
+                            <div class="reply-date">
+                                <i class="fas fa-clock"></i>
+                                2024-12-24 15:30
+                            </div>
+                        </div>
+                        <div class="reply-content">
+                            React è fantastico! Ti consiglio anche di dare un'occhiata a Vue.js, è molto intuitivo per iniziare.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form risposta -->
+                <div class="reply-form" id="reply-form-2" style="display: none;">
+                    <h4><i class="fas fa-reply"></i> Rispondi a questo post:</h4>
+                    <form class="reply-form-content">
+                        <div class="form-group">
+                            <input type="text" name="author" required maxlength="50" placeholder="Il tuo nome">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="content" required maxlength="500" placeholder="Scrivi la tua risposta..."></textarea>
+                        </div>
+                        <div class="reply-actions">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fas fa-paper-plane"></i> Invia Risposta
+                            </button>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleReplyForm(2)">
+                                <i class="fas fa-times"></i> Annulla
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="post-item">
+                <div class="post-header">
+                    <div class="post-author">
+                        <i class="fas fa-user-circle"></i>
+                        <strong>Paolo Blu</strong>
+                    </div>
+                    <div class="post-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        2024-12-24 16:45
+                    </div>
+                </div>
+                <div class="post-content">
+                    Qualcuno ha esperienza con il deployment di applicazioni PHP? Sto cercando consigli per mettere online il mio primo progetto.
+                </div>
+                <div class="post-actions">
+                    <button class="btn btn-secondary btn-sm reply-btn" onclick="toggleReplyForm(3)">
+                        <i class="fas fa-reply"></i> Rispondi
+                    </button>
+                    <span class="replies-count">
+                        <i class="fas fa-comments"></i> 2 risposte
+                    </span>
+                </div>
+                
+                <!-- Risposte al Post 3 -->
+                <div class="replies-container">
+                    <div class="reply-item">
+                        <div class="reply-header">
+                            <div class="reply-author">
+                                <i class="fas fa-user"></i>
+                                <strong>Sofia Gialli</strong>
+                            </div>
+                            <div class="reply-date">
+                                <i class="fas fa-clock"></i>
+                                2024-12-24 17:10
+                            </div>
+                        </div>
+                        <div class="reply-content">
+                            Ti consiglio di provare servizi come Heroku o Vercel per iniziare. Sono molto semplici da usare!
+                        </div>
+                    </div>
+                    
+                    <div class="reply-item">
+                        <div class="reply-header">
+                            <div class="reply-author">
+                                <i class="fas fa-user"></i>
+                                <strong>Marco Rossi</strong>
+                            </div>
+                            <div class="reply-date">
+                                <i class="fas fa-clock"></i>
+                                2024-12-24 17:30
+                            </div>
+                        </div>
+                        <div class="reply-content">
+                            Anche GitHub Pages è un'ottima opzione per progetti statici. Per PHP ti serve un hosting che supporti il linguaggio.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Form risposta -->
+                <div class="reply-form" id="reply-form-3" style="display: none;">
+                    <h4><i class="fas fa-reply"></i> Rispondi a questo post:</h4>
+                    <form class="reply-form-content">
+                        <div class="form-group">
+                            <input type="text" name="author" required maxlength="50" placeholder="Il tuo nome">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="content" required maxlength="500" placeholder="Scrivi la tua risposta..."></textarea>
+                        </div>
+                        <div class="reply-actions">
+                            <button type="submit" class="btn btn-primary btn-sm">
+                                <i class="fas fa-paper-plane"></i> Invia Risposta
+                            </button>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleReplyForm(3)">
+                                <i class="fas fa-times"></i> Annulla
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="forum-footer">
+            <p>&copy; 2024 Mini Forum - Progetto Demo</p>
+            <p>Sviluppato per opportunità lavorative</p>
+        </footer>
+    </div>
+
+    <script>
+        // Funzione per mostrare/nascondere il form di risposta
+        function toggleReplyForm(postId) {
+            const replyForm = document.getElementById('reply-form-' + postId);
+            if (replyForm.style.display === 'none' || replyForm.style.display === '') {
+                replyForm.style.display = 'block';
+                replyForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                replyForm.style.display = 'none';
+            }
+        }
+
+        // Gestione demo dei form
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form principale
+            document.getElementById('demo-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('DEMO: In un ambiente reale, questo post verrebbe salvato nel database!');
+                this.reset();
+            });
+
+            // Form di risposta
+            const replyForms = document.querySelectorAll('.reply-form-content');
+            replyForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('DEMO: In un ambiente reale, questa risposta verrebbe salvata nel database!');
+                    this.reset();
+                    // Nascondi il form dopo l'invio
+                    this.closest('.reply-form').style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
