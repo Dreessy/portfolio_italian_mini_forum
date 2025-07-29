@@ -152,7 +152,7 @@ Questo progetto è stato sviluppato come portfolio personale. Suggerimenti e fee
 ## 📞 Contatti
 
 **Ciro Casoria**
-- 🐙 **GitHub**: [@xDreessy](https://github.com/xDreessy)
+- 🐙 **GitHub**: [@xDreessy](https://github.com/Dreessy)
 - 💼 **LinkedIn**: [Ciro Casoria](https://www.linkedin.com/in/ciro-casoria-01b93b201/)
 - 📧 **Email**: [ciro062012@icloud.com](mailto:ciro062012@icloud.com)
 
