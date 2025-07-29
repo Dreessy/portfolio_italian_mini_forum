@@ -159,7 +159,7 @@ $posts = getLatestPosts(10);
         </div>
         
         <footer class="forum-footer">
-            <p>&copy; 2024 Mini Forum Professionale - Sviluppato con PHP e MySQL</p>
+            <p>&copy; 2025 Mini Forum Professionale - Sviluppato con PHP e MySQL Per opportunitá lavorative</p>
         </footer>
     </div>
     
